@@ -19,6 +19,7 @@
 		D598DB471B17EAFA00B1E02D /* Rotten_MangoesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D598DB461B17EAFA00B1E02D /* Rotten_MangoesTests.m */; };
 		D598DB521B18072300B1E02D /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = D598DB511B18072300B1E02D /* Movie.m */; };
 		D598DB551B18DA6000B1E02D /* MovieCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D598DB541B18DA6000B1E02D /* MovieCollectionViewCell.m */; };
+		D5D0A53E1B2120C9001FE118 /* MovieDetailsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D0A53D1B2120C9001FE118 /* MovieDetailsCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		D598DB511B18072300B1E02D /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
 		D598DB531B18DA6000B1E02D /* MovieCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieCollectionViewCell.h; sourceTree = "<group>"; };
 		D598DB541B18DA6000B1E02D /* MovieCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieCollectionViewCell.m; sourceTree = "<group>"; };
+		D5D0A53C1B2120C9001FE118 /* MovieDetailsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieDetailsCell.h; sourceTree = "<group>"; };
+		D5D0A53D1B2120C9001FE118 /* MovieDetailsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieDetailsCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,19 +101,21 @@
 			children = (
 				D598DB2E1B17EAFA00B1E02D /* AppDelegate.h */,
 				D598DB2F1B17EAFA00B1E02D /* AppDelegate.m */,
-				D598DB311B17EAFA00B1E02D /* MovieCollectionViewController.h */,
-				D598DB321B17EAFA00B1E02D /* MovieCollectionViewController.m */,
-				D598DB341B17EAFA00B1E02D /* Main.storyboard */,
 				D598DB501B18072300B1E02D /* Movie.h */,
 				D598DB511B18072300B1E02D /* Movie.m */,
+				D598DB311B17EAFA00B1E02D /* MovieCollectionViewController.h */,
+				D598DB321B17EAFA00B1E02D /* MovieCollectionViewController.m */,
 				D598DB531B18DA6000B1E02D /* MovieCollectionViewCell.h */,
 				D598DB541B18DA6000B1E02D /* MovieCollectionViewCell.m */,
-				D58CD80A1B18F633002786FE /* MovieDetailsTableViewController.h */,
-				D58CD80B1B18F633002786FE /* MovieDetailsTableViewController.m */,
 				D58CD8101B18F936002786FE /* Review.h */,
 				D58CD8111B18F936002786FE /* Review.m */,
+				D58CD80A1B18F633002786FE /* MovieDetailsTableViewController.h */,
+				D58CD80B1B18F633002786FE /* MovieDetailsTableViewController.m */,
 				D52378C11B1FF07A00659D5B /* ReviewCell.h */,
 				D52378C21B1FF07A00659D5B /* ReviewCell.m */,
+				D598DB341B17EAFA00B1E02D /* Main.storyboard */,
+				D5D0A53C1B2120C9001FE118 /* MovieDetailsCell.h */,
+				D5D0A53D1B2120C9001FE118 /* MovieDetailsCell.m */,
 				D598DB371B17EAFA00B1E02D /* Images.xcassets */,
 				D598DB391B17EAFA00B1E02D /* LaunchScreen.xib */,
 				D598DB2A1B17EAFA00B1E02D /* Supporting Files */,
@@ -245,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D598DB331B17EAFA00B1E02D /* MovieCollectionViewController.m in Sources */,
+				D5D0A53E1B2120C9001FE118 /* MovieDetailsCell.m in Sources */,
 				D598DB551B18DA6000B1E02D /* MovieCollectionViewCell.m in Sources */,
 				D598DB301B17EAFA00B1E02D /* AppDelegate.m in Sources */,
 				D598DB521B18072300B1E02D /* Movie.m in Sources */,

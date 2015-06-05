@@ -10,7 +10,7 @@
 
 @implementation Movie
 
--(instancetype)initWithSynopsis:(NSString*)synopsis andWithImageURL:(NSString*)imageURL andWithTitle:(NSString*)title andWithYear:(int)year andWithMpaa_rating:(NSString*)mpaa_rating andWithRuntime:(int)runtime andWithReleaseDate:(NSString*)releaseDate{
+-(instancetype)initWithSynopsis:(NSString*)synopsis andWithImageURL:(NSString*)imageURL andWithTitle:(NSString*)title andWithYear:(int)year andWithMpaa_rating:(NSString*)mpaa_rating andWithRuntime:(int)runtime andWithReleaseDate:(NSString*)releaseDate andWithNumberID:(NSString*)numberID {
     self = [super init];
     if (self) {
         self.synopsis = synopsis;
@@ -20,15 +20,16 @@
         self.mpaa_rating = mpaa_rating;
         self.runtime = runtime;
         self.releaseDate = releaseDate;
+        self.numberID = numberID;
     }
     return self;
 }
 
-- (NSString *)description
-{
-    
-    return [NSString stringWithFormat:@"Movie with title[%@] year[%d] mpaa_rating[%@] runtime[%d] releasedate[%@] synopsis[%@]", self.title, self.year, self.mpaa_rating, self.runtime, self.releaseDate, self.synopsis];
-    
-}
+//- (NSString *)description
+//{
+//    
+//    return [NSString stringWithFormat:@"Movie with title[%@] year[%d] mpaa_rating[%@] runtime[%d] releasedate[%@] synopsis[%@]", self.title, self.year, self.mpaa_rating, self.runtime, self.releaseDate, self.synopsis];
+//    
+//}
 
 @end

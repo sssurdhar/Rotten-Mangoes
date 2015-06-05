@@ -6,21 +6,20 @@
 //  Copyright (c) 2015 Lighthouse Labs. All rights reserved.
 //
 
-#import "MovieDetailsTableViewController.h"
+#import "MovieDetailsTableView.h"
 #import "Review.h"
 #import "ReviewCell.h"
-#import "MovieDetailsCell.h"
 
-@interface MovieDetailsTableViewController ()
+@interface MovieDetailsTableView ()
 
 @property (nonatomic, strong) NSArray *data;
 
 @end
 
-@implementation MovieDetailsTableViewController
+@implementation MovieDetailsTableView
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+    [self viewDidLoad];
     
     self.reviews = [[NSMutableArray alloc]init];
     
@@ -48,7 +47,7 @@
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.tableView reloadData];
+            [self reloadData];
         });
         
     }];
@@ -64,7 +63,7 @@
 }
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+    [self didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
@@ -72,30 +71,16 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    if (section == 0) {
-        return 1;
-    }
     return self.reviews.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (indexPath.section == 0){
-        MovieDetailsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"detailCell" forIndexPath:indexPath];
-        cell.titleLabel.text = self.movie.title;
-        cell.synopsisLabel.text = self.movie.synopsis;
-        cell.movieImage.image = self.movie.image;
-        
-        // Configure the cell...
-        
-        return cell;
-    }
     ReviewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reviewCell" forIndexPath:indexPath];
     
     Review *review = self.reviews[indexPath.row];
@@ -110,9 +95,6 @@
     return cell;
 }
 
-- (IBAction)back {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 
 
 /*

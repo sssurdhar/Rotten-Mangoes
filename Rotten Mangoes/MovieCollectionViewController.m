@@ -19,12 +19,13 @@
 
 @implementation MovieCollectionViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.movies =[[NSMutableArray alloc] init];
     
-    NSString *inTheatersMovieURL = @"http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json?apikey=sr9tdu3checdyayjz85mff8j";
+    NSString *inTheatersMovieURL = @"http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json?apikey=sr9tdu3checdyayjz85mff8j&page_limit=50";
     
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *task = [session dataTaskWithURL:[NSURL URLWithString:inTheatersMovieURL]
@@ -32,7 +33,6 @@
         
          NSError *e = nil;
          NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData: data options: NSJSONReadingMutableContainers error: &e];
-//         NSLog(@"%@", dataDictionary);
          
          self.data = [dataDictionary objectForKey:@"movies"];
          
@@ -44,12 +44,11 @@
              NSString *mpaaRating = movieDetails[@"mpaa_rating"];
              NSNumber *runtime = movieDetails[@"runtime"];
              NSString *releaseDate = movieDetails[@"release_dates"];
+             NSString *numberID = movieDetails[@"id"];
              
-             Movie *movie = [[Movie alloc]initWithSynopsis:synopsis andWithImageURL:imageURL andWithTitle:title andWithYear:year.intValue andWithMpaa_rating:mpaaRating andWithRuntime:runtime.intValue andWithReleaseDate:releaseDate];
+             Movie *movie = [[Movie alloc]initWithSynopsis:synopsis andWithImageURL:imageURL andWithTitle:title andWithYear:year.intValue andWithMpaa_rating:mpaaRating andWithRuntime:runtime.intValue andWithReleaseDate:releaseDate andWithNumberID:numberID];
              
              [self.movies addObject:movie];
-             
-//             NSLog(@"%@", movie);
              
          }
          
@@ -60,6 +59,7 @@
      }];
     
     [task resume];
+    
     
     // Do any additional setup after loading the view, typically from a nib.
 }
@@ -102,20 +102,13 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showReviews"]) {
-        MovieDetailsTableViewController *movieDVC = segue.destinationViewController;
-        NSIndexPath *indexPath = [[self.collectionView indexPathsForSelectedItems] firstObject];
-        movieDVC.movie = self.movies[indexPath.row];
+        NSIndexPath *moviePath = [[self.collectionView indexPathsForSelectedItems]firstObject];
+        Movie *movie = [self.movies objectAtIndex:moviePath.item];
+        MovieDetailsTableViewController *destinationVC = [segue destinationViewController];
+        destinationVC.movie = movie;
     }
 }
-//
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    if ([segue.identifier isEqualToString:@"showReview"]){
-//        NSIndexPath* moviePath = [[self.collectionView indexPathsForSelectedItems] firstObject];
-//        Movie* movie = [self.movies objectAtIndex:moviePath.row];
-//        MovieDetailsTableViewController* controller = segue.destinationViewController;
-//        [controller :movie];
-//    }
-//}
+
 
 @end
 

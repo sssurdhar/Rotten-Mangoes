@@ -18,8 +18,9 @@
 @property (assign) int runtime;
 @property (nonatomic) NSString *releaseDate;
 @property (nonatomic) UIImage *image;
+@property (nonatomic) NSString *numberID;
 
--(instancetype)initWithSynopsis:(NSString*)synopsis andWithImageURL:(NSString*)imageURL andWithTitle:(NSString*)title andWithYear:(int)year andWithMpaa_rating:(NSString*)mpaa_rating andWithRuntime:(int)runtime andWithReleaseDate:(NSString*)releaseDate;
+-(instancetype)initWithSynopsis:(NSString*)synopsis andWithImageURL:(NSString*)imageURL andWithTitle:(NSString*)title andWithYear:(int)year andWithMpaa_rating:(NSString*)mpaa_rating andWithRuntime:(int)runtime andWithReleaseDate:(NSString*)releaseDate andWithNumberID:(NSString*)numberID;
 
 
 @end

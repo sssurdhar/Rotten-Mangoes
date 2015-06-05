@@ -9,11 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "Movie.h"
 
-@interface MovieDetailsTableViewController : UITableViewController
+@interface MovieDetailsTableView : UITableView
 
 @property (nonatomic) Movie *movie;
 @property (nonatomic) NSMutableArray *reviews;
-
-- (IBAction)back;
 
 @end
